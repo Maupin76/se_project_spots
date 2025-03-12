@@ -9,20 +9,3 @@
   width: 94px;
   height: 26px;
 }
-
-.profile__description {
-  font-family: "Poppins", "Arial", sans-serif;
-  font-weight: 500;
-  line-height: 100%;
-}
-
-.profile__name {
-  font-family: "Poppins", "Arial", sans-serif;
-  font-weight: 500;
-  line-height: 100%;
-  font-size: 32px;
-}
-
-.profile__description {
-  font-size: 16px;
-}
