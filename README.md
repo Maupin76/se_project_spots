@@ -1,10 +1,30 @@
 # Project 3: Spots
 
-### Overview  
+An Image sharing site.
+
+## Description
+
+"Spots" is a responsive web project designed to showcase different scenic locations in a visually appealing way. It follows modern web development best practices, ensuring that all elements display correctly across various screen sizes.
+
+## Tech Stack
+
+- HTML
+- CSS
+- Responsive Design
+
+## Deployment
+
+This webpage is deployed to GitHub Pages.
+
+[Spots GitHub Pages Deployment](https://maupin76.github.io/se_project_spots/)
+
+## Overview  
 
 * Intro  
 * Figma  
-* Images  
+* Images 
+
+
   
 **Intro**
   
