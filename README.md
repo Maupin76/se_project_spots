@@ -1,41 +1,43 @@
-# Project 3: Spots
+# 🌍 Spots – A Social Media Photo-Sharing App  
 
-An Image sharing site.
+An interactive social media web application where users can **add and remove photos, like photos of other users, and make minor adjustments to their profile**.
 
-## Description
+![Spots Screenshot](https://drive.google.com/uc?export=view&id=1T-fHaDNsFSMRfVcfHxc9vJ8xf2l54Mr7)  
 
-"Spots" is a responsive web project designed to showcase different scenic locations in a visually appealing way. It follows modern web development best practices, ensuring that all elements display correctly across various screen sizes.
+---
 
-## Tech Stack
+## 📌 Description  
 
-- HTML
-- CSS
-- Responsive Design
+"Spots" is a **responsive** and **visually immersive** photo-sharing platform where users can interact with scenic locations. It follows modern web development best practices, ensuring seamless functionality across all devices.
 
-## Deployment
+## 🛠️ Tech Stack  
 
-This webpage is deployed to GitHub Pages.
+- **HTML5**  
+- **CSS3** (Flexbox, Grid)  
+- **BEM Methodology**  
+- **Figma** (for design references)  
+- **Responsive Design**  
 
-[Spots GitHub Pages Deployment](https://maupin76.github.io/se_project_spots/)
+## 🚀 Deployment  
 
-## Overview  
+This project is deployed on **GitHub Pages**.  
+👉 [View Live Site](https://maupin76.github.io/se_project_spots/)  
 
-* Intro  
-* Figma  
-* Images 
+## 📌 Features  
 
+✅ Fully **responsive design** for all devices  
+✅ **Profile section** with avatar & editable details  
+✅ **Interactive photo gallery** with user likes  
+✅ **Optimized images** for fast performance  
+✅ **BEM-structured CSS** for maintainable styling  
 
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## 🎨 UI/UX Design  
+
+The project was designed using **Figma**. View the original design here:  
+📌 [Figma Project](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)  
+
+## ⚙️ Setup Instructions  
+
+1. **Clone the repository**:  
+   ```bash
+   git clone https://github.com/maupin76/se_project_spots.git
