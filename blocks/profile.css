@@ -1,20 +1,18 @@
 .profile {
   display: flex;
   padding: 34px 0 20px;
-  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
 }
 
 .profile__avatar {
   margin-right: 20px;
   width: 190px;
   height: 190px;
-  border-radius: 5%;
+  border-radius: 8px;
 }
 
 .profile__column {
   display: flex;
   flex-direction: column;
-  height: 190px;
   margin-left: 0;
   padding: 0;
 }
@@ -22,45 +20,46 @@
 .profile__name {
   margin: 0 0 12px;
   font-size: 32px;
-  /* font-family: "Poppins", sans-serif; */
+  font-weight: 500;
+  line-height: 100%;
 }
 
 .profile__description {
   margin: 0;
   font-size: 16px;
-  /* font-family: "Poppins", sans-serif; */
+  font-weight: 500;
+  line-height: 100%;
 }
 
 .profile__edit-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   border: none;
   background-color: transparent;
   padding: 0;
   margin-top: auto;
   font-size: 16px;
   align-self: flex-start;
-  color: rgba(33, 33, 33, 0.7);
-  /* font-family: "Poppins", sans-serif; */
+  color: #212121;
+  opacity: 0.7;
   font-weight: 500;
   line-height: 100%;
   cursor: pointer;
 }
 
 .profile__edit-button:hover {
-  color: #212121;
   opacity: 1;
   cursor: url('../images/cursor-pointer.svg'), auto;
 }
 
-.profile__edit-button-icon {
-  opacity: 0.7;
-}
-
 .profile__new-post-button {
   display: flex;
+  border: none;
   align-items: center;
   justify-content: center;
   background: #212121;
-  color: #fff;
+  color: #FCF5E5;
   width: 149px;
   border-radius: 8px;
   margin: 0;
@@ -68,7 +67,6 @@
   font-size: 16px;
   margin-left: auto;
   padding: 15px 0;
-  /* font-family: "Poppins", sans-serif; */
   font-weight: 500;
   line-height: 100%;
   gap: 8px;
@@ -98,6 +96,15 @@
     margin: 0 auto;
     text-align: center;
     padding: 0 0 20px;
+  }
+
+  .profile__name {
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  .profile__description{
+    padding-bottom: 32px;
   }
 
   .profile__edit-button {
