@@ -6,7 +6,7 @@ An interactive social media web application where users can **add and remove pho
 ![Spots Screenshot Tablet](https://drive.google.com/file/d/1p2jFISkahMYImTrys66YyWA2iawecCIz/view?usp=drive_link)
 ![Spots Screenshot Mobile](https://drive.google.com/file/d/1T-fHaDNsFSMRfVcfHxc9vJ8xf2l54Mr7/view?usp=drive_link)
 
-![Project Video Explanation](https://drive.google.com/file/d/1BAhi5RRm_hg1OXQiFU-HrWt6_wu2675C/view?usp=drive_link)
+![Project Video Explanation](https://drive.google.com/file/d/1BAhi5RRm_hg1OXQiFU-HrWt6_wu2675C/view?usp=sharing)
 
 
 
