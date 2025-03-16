@@ -18,10 +18,15 @@
 }
 
 .profile__name {
+  max-width: 420px;
   margin: 0 0 12px;
   font-size: 32px;
   font-weight: 500;
   line-height: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .profile__description {
@@ -29,6 +34,10 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .profile__edit-button {
