@@ -2,11 +2,11 @@
 
 An interactive social media web application where users can **add and remove photos, like photos of other users, and make minor adjustments to their profile**.
 
-![Spots Screenshot Desktop](https://drive.google.com/file/d/18VbkdUkUpPKU1ttLSK5SXPQtvGaFm92y/view?usp=drive_link)
-![Spots Screenshot Tablet](https://drive.google.com/file/d/1p2jFISkahMYImTrys66YyWA2iawecCIz/view?usp=drive_link)
-![Spots Screenshot Mobile](https://drive.google.com/file/d/1T-fHaDNsFSMRfVcfHxc9vJ8xf2l54Mr7/view?usp=drive_link)
+![Spots Screenshot Desktop](https://drive.google.com/file/d/18VbkdUkUpPKU1ttLSK5SXPQtvGaFm92y/view?usp=sharing)
+![Spots Screenshot Tablet](https://drive.google.com/file/d/1p2jFISkahMYImTrys66YyWA2iawecCIz/view?usp=sharing)
+![Spots Screenshot Mobile](https://drive.google.com/file/d/1T-fHaDNsFSMRfVcfHxc9vJ8xf2l54Mr7/view?usp=sharing)
 
-![Project Video Explanation](https://drive.google.com/file/d/1BAhi5RRm_hg1OXQiFU-HrWt6_wu2675C/view?usp=sharing)
+[Project Video Explanation](https://drive.google.com/file/d/1BAhi5RRm_hg1OXQiFU-HrWt6_wu2675C/view?usp=sharing)
 
 
 
