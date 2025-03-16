@@ -45,7 +45,7 @@
 
 .card__like-button:hover {
   opacity: 1;
-  cursor: url('../images/cursor-pointer.svg'), auto;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
