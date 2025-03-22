@@ -60,6 +60,7 @@
   font-weight: 500;
   line-height: 100%;
   cursor: pointer;
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .profile__edit-button:hover {
@@ -85,6 +86,7 @@
   line-height: 100%;
   gap: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .profile__new-post-button:hover {
