@@ -24,3 +24,24 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg"
   },
 ];
+
+// Select the modal and the button to open it
+const profileEditButton = document.querySelector('.profile__edit-button');
+const editProfileModal = document.querySelector('#edit-profile-modal');
+const closeEditProfileModal = editProfileModal.querySelector('.modal__close-button');
+
+//open the modal
+// This creates the function that will add the class 'modal_opened' to the modal
+function openModal() {
+  editProfileModal.classList.add('modal_opened');
+}
+// Add an event listener to the overlay to close the modal
+profileEditButton.addEventListener('click', openModal);
+
+//close the modal
+// This function removes the class 'modal_opened' from the modal
+function closeModal() {
+  editProfileModal.classList.remove('modal_opened');
+}
+// Add an event listener to the overlay to close the modal
+closeEditProfileModal.addEventListener('click', closeModal);

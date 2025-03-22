@@ -82,6 +82,9 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
-  color: #;
+  background-color: #212121;
+  color: #FCF5E5;
+  border-radius: 8px;
+  border: none;
 }
 
