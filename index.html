@@ -41,7 +41,17 @@
 
         <ul class="cards__list">
 
-          <li class="card">
+          <template id="card-template">
+            <li class="card">
+              <img src="" alt="" class="card__img">
+              <div class="card__content">
+                <h2 class="card__title"></h2>
+                <button type="button" class="card__like-button"></button>
+              </div>
+            </li>
+          </template>
+
+          <!-- <li class="card">
             <img src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg" alt="Photo of a projected snowy resort on the wall in a room." class="card__img">
             <div class="card__content">
               <h2 class="card__title">Val Thorens</h2>
@@ -87,7 +97,7 @@
               <h2 class="card__title">Mountain house</h2>
               <button type="button" class="card__like-button"></button>
             </div>
-          </li>
+          </li> -->
         </ul>
       </section>
 
@@ -105,13 +115,13 @@
 
           <label for="name" class="modal__label">
             Name
-            <input id="name" type="text" class="modal__input" placeholder="Bessie Coleman" required>
+            <input id="name" type="text" class="modal__input" required>
           </label>
 
 
           <label for="description" class="modal__label">
             Description
-            <input id="description" type="text" class="modal__input" placeholder="Civil Aviator" required>
+            <input id="description" type="text" class="modal__input" required>
           </label>
 
           <button type="submit" class="modal__submit-button">Save</button>
