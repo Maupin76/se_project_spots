@@ -101,5 +101,5 @@ function getCardElement(data) {
 
 for (let i = 0; i < initialCards.length; i++) {
   const cardElement = getCardElement(initialCards[i]); // Create a card element
-  cardsContainer.appendChild(cardElement); // Add the card to the container
+  cardsContainer.append(cardElement); // Add the card to the container
 }

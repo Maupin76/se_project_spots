@@ -12,6 +12,10 @@
   visibility: hidden;
 }
 
+.modal__form{
+  width: 100%; /* Make the form take the full width of the container */
+}
+
 .modal_opened{
   visibility: visible;
 }
@@ -24,7 +28,9 @@
   background-color: #ffffff;
   padding: 32px 50px;
   border-radius: 8px;
+  width: 95%;
   max-width: 730px;
+  box-sizing: border-box;
 }
 
 .modal__close-button{
@@ -42,12 +48,15 @@
 }
 
 .modal__title{
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 0 32px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 100%;
   color: #212121;
+  align-content: center;
 }
 
 .modal__label{
@@ -63,21 +72,34 @@
   opacity: 0.7;
 }
 
+input:not(:placeholder-shown) {
+  opacity: 1; /* Full opacity when filled */
+  border: 1px solid #21212166;
+}
+
 .modal__input{
-  width: 630px;
+  width: 100%; /* Make the input fields grow with the container */
   padding: 16px 12px;
+  cursor: pointer;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 100%;
   color: #212121;
   border-radius: 8px;
-  border: 1px solid #21212166
+  border: 1px solid #21212166;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  opacity: 0.3;
+}
+
+.modal__input:hover{
+  border: 1px solid #212121FF;
 }
 
 .modal__submit-button{
   width: 156px;
   padding: 18px 0;
+  cursor: pointer;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -86,5 +108,38 @@
   color: #FCF5E5;
   border-radius: 8px;
   border: none;
+}
+
+@media (max-width: 627px) {
+  .modal__container{
+    width: 330px; /* Set a fixed width for mobile screens */
+    padding: 12px;
+  }
+
+  .modal__form{
+    width: 100%; /* Ensure the form takes the full width of the container */
+  }
+
+  .modal__title{
+    margin: 0 0 24px;
+    font-size: 20px;
+  }
+
+  .modal__label{
+    margin-bottom: 24px;
+  }
+
+  .modal__input{
+    font-size: 16px;
+  }
+
+  .modal__submit-button{
+    width: 100%; /* Make the button take the full width of the container */
+  }
+
+  .modal__close-button{
+    top: 12px;
+    right: 12px;
+  }
 }
 
