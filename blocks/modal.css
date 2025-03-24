@@ -45,18 +45,20 @@
   background-image: url(../images/Close-btn.svg);
   opacity: 0.4;
   padding: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal__close-button:hover{
+  opacity: 1;
 }
 
 .modal__title{
-  display: flex;
-  flex-wrap: wrap;
   margin: 0 0 32px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 100%;
   color: #212121;
-  align-content: center;
 }
 
 .modal__label{
@@ -68,17 +70,11 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 110%;
-  color: #212121;
-  opacity: 0.7;
-}
-
-input:not(:placeholder-shown) {
-  opacity: 1; /* Full opacity when filled */
-  border: 1px solid #21212166;
+  color: 33, 33, 33, 1;
 }
 
 .modal__input{
-  width: 100%; /* Make the input fields grow with the container */
+  width: 100%;
   padding: 16px 12px;
   cursor: pointer;
   font-family: Poppins, Arial, Helvetica, sans-serif;
@@ -88,12 +84,16 @@ input:not(:placeholder-shown) {
   color: #212121;
   border-radius: 8px;
   border: 1px solid #21212166;
-  box-sizing: border-box; /* Ensure padding is included in the width */
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+.modal__input::placeholder {
   opacity: 0.3;
 }
 
 .modal__input:hover{
-  border: 1px solid #212121FF;
+  border: 1px solid #212121;
 }
 
 .modal__submit-button{
@@ -108,16 +108,18 @@ input:not(:placeholder-shown) {
   color: #FCF5E5;
   border-radius: 8px;
   border: none;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+
+}
+
+.modal__submit-button:hover{
+  opacity: 0.8;
 }
 
 @media (max-width: 627px) {
   .modal__container{
-    width: 330px; /* Set a fixed width for mobile screens */
+    width: 300px;
     padding: 12px;
-  }
-
-  .modal__form{
-    width: 100%; /* Ensure the form takes the full width of the container */
   }
 
   .modal__title{

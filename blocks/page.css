@@ -1,4 +1,6 @@
 .page{
+  display: flex;
+  flex-direction: column;
   background-color: #fcf5e5;
   margin: 0 auto;
   min-height: 100vh;
