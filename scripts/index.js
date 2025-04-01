@@ -26,50 +26,64 @@ const initialCards = [
 ];
 
 //----------------------------------Modal form window------------------------------------
-// Select the modal and the button to open it
+// Select the edit modal and the button to open it
 const profileEditButton = document.querySelector('.profile__edit-button');
+const newPostButton = document.querySelector('.profile__new-post-button');
 const editProfileModal = document.querySelector('#edit-profile-modal');
 const closeEditProfileModal = editProfileModal.querySelector('.modal__close-button');
-
 // Select the profile elements
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
-
 // Select the form inputs
 const editProfileForm = document.querySelector('.modal__form');
 const nameInput = document.querySelector('#name');
 const descriptionInput = document.querySelector('#description');
 
-//open the modal
-// This creates the function that will add the class 'modal_opened' to the modal
-function openModal() {
-  editProfileModal.classList.add('modal_opened');
-  nameInput.value = profileName.textContent; //pulls the current name from the profile
-  descriptionInput.value = profileDescription.textContent; //pulls the current description from the profile
+
+const cardModal = document.querySelector('#add-card-modal');
+const closeCardButton = cardModal.querySelector('.modal__close-button');
+
+//open the modals
+function openModal(modal) {
+  modal.classList.add('modal_opened');
 }
 
-//close the modal
-// This function removes the class 'modal_opened' from the modal
-function closeModal() {
-  editProfileModal.classList.remove('modal_opened');
+//close the modals
+function closeModal(modal) {
+  modal.classList.remove('modal_opened');
 }
+
+// Open edit profile modal when the edit button is clicked
+profileEditButton.addEventListener('click', () => {
+  nameInput.value = profileName.textContent;
+  descriptionInput.value = profileDescription.textContent;
+  openModal(editProfileModal)
+});
+
+// close edit profile modal on close button click
+closeEditProfileModal.addEventListener('click', () => {
+ closeModal(editProfileModal)
+});
 
 // Handle form submission to update profile and close modal
 function handleFormSubmit(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
-  // Update the profile fields with the new values from the form inputs
+  event.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
-  // Close the modal
-  closeModal();
+  closeModal(editProfileModal);
 }
 
-// Add an event listener to the overlay to close the modal
-profileEditButton.addEventListener('click', openModal);
-// Add an event listener to the overlay to close the modal
-closeEditProfileModal.addEventListener('click', closeModal);
-// Add an event listener to the form to handle submission
+//Handle form submission
 editProfileForm.addEventListener('submit', handleFormSubmit);
+
+newPostButton.addEventListener('click', () => {
+  openModal(cardModal); // Open the add card modal when the new post button is clicked
+});
+
+closeCardButton.addEventListener('click', () => {
+  closeModal(cardModal);
+});
+
 
 //----------------------------------Card elements------------------------------------
 
