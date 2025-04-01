@@ -26,46 +26,51 @@ const initialCards = [
 ];
 
 //----------------------------------Modal form window------------------------------------
-// Select the edit modal and the button to open it
+// Select modals and buttons
 const profileEditButton = document.querySelector('.profile__edit-button');
 const newPostButton = document.querySelector('.profile__new-post-button');
+
 const editProfileModal = document.querySelector('#edit-profile-modal');
+const addCardModal = document.querySelector('#add-card-modal');
+
 const closeEditProfileModal = editProfileModal.querySelector('.modal__close-button');
-// Select the profile elements
+const closeCardButton = addCardModal.querySelector('.modal__close-button');
+
+// Profile info elements
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
-// Select the form inputs
-const editProfileForm = document.querySelector('.modal__form');
+
+// Form elements
+const editProfileForm = document.forms['edit-profile']; // ✅ select by name
+const addCardForm = document.forms['add-card']; // ✅ select by name
+
 const nameInput = document.querySelector('#name');
 const descriptionInput = document.querySelector('#description');
+const cardImageInput = document.querySelector('#link');
+const cardCaptionInput = document.querySelector('#caption');
 
-
-const cardModal = document.querySelector('#add-card-modal');
-const closeCardButton = cardModal.querySelector('.modal__close-button');
-
-//open the modals
+// Modal utilities
 function openModal(modal) {
   modal.classList.add('modal_opened');
 }
 
-//close the modals
 function closeModal(modal) {
   modal.classList.remove('modal_opened');
 }
 
-// Open edit profile modal when the edit button is clicked
+// Open/close modals
 profileEditButton.addEventListener('click', () => {
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
-  openModal(editProfileModal)
+  openModal(editProfileModal);
 });
 
-// close edit profile modal on close button click
-closeEditProfileModal.addEventListener('click', () => {
- closeModal(editProfileModal)
-});
+closeEditProfileModal.addEventListener('click', () => closeModal(editProfileModal));
 
-// Handle form submission to update profile and close modal
+newPostButton.addEventListener('click', () => openModal(addCardModal));
+closeCardButton.addEventListener('click', () => closeModal(addCardModal));
+
+// Handle Edit Profile form submission
 function handleFormSubmit(event) {
   event.preventDefault();
   profileName.textContent = nameInput.value;
@@ -73,45 +78,46 @@ function handleFormSubmit(event) {
   closeModal(editProfileModal);
 }
 
-//Handle form submission
+// Handle Add Card form submission
+function handleAddCardFormSubmit(event) {
+  event.preventDefault();
+
+  const newCardData = {
+    name: cardCaptionInput.value,
+    link: cardImageInput.value
+  };
+
+  const newCardElement = getCardElement(newCardData);
+  cardsContainer.prepend(newCardElement);
+  closeModal(addCardModal);
+  addCardForm.reset();
+}
+
+// Add event listeners to forms
 editProfileForm.addEventListener('submit', handleFormSubmit);
-
-newPostButton.addEventListener('click', () => {
-  openModal(cardModal); // Open the add card modal when the new post button is clicked
-});
-
-closeCardButton.addEventListener('click', () => {
-  closeModal(cardModal);
-});
-
+addCardForm.addEventListener('submit', handleAddCardFormSubmit);
 
 //----------------------------------Card elements------------------------------------
+const cardTemplate = document.querySelector('#card-template').content;
+const cardsContainer = document.querySelector('.cards__list');
 
-// Select the template for the card and the container where cards will be added
-const cardTemplate = document.querySelector('#card-template').content; // Template for the card
-const cardsContainer = document.querySelector('.cards__list'); // Container for the cards
-
-// Function to create a card element
 function getCardElement(data) {
-  // Clone the card template
   const cardElement = cardTemplate.cloneNode(true);
-
-  // Select and update the card elements
   const cardImage = cardElement.querySelector('.card__img');
   const cardTitle = cardElement.querySelector('.card__title');
 
-  cardImage.src = data.link; // Set the image source
-  cardImage.alt = data.name; // Set the alt text
-  cardTitle.textContent = data.name; // Set the card title
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+  cardTitle.textContent = data.name;
 
-  return cardElement; // Return the card element
+  return cardElement;
 }
 
-// Iterate over the initialCards array and add each card to the page
 initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData); // Create a card element
-  cardsContainer.appendChild(cardElement); // Add the card to the container
+  const cardElement = getCardElement(cardData);
+  cardsContainer.appendChild(cardElement);
 });
+
 
 // for (let i = 0; i < initialCards.length; i++) {
 //   const cardElement = getCardElement(initialCards[i]); // Create a card element
