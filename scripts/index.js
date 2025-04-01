@@ -94,12 +94,12 @@ function getCardElement(data) {
 }
 
 // Iterate over the initialCards array and add each card to the page
-// initialCards.forEach((cardData) => {
-//   const cardElement = getCardElement(cardData); // Create a card element
-//   cardsContainer.appendChild(cardElement); // Add the card to the container
-// });
+initialCards.forEach((cardData) => {
+  const cardElement = getCardElement(cardData); // Create a card element
+  cardsContainer.appendChild(cardElement); // Add the card to the container
+});
 
-for (let i = 0; i < initialCards.length; i++) {
-  const cardElement = getCardElement(initialCards[i]); // Create a card element
-  cardsContainer.append(cardElement); // Add the card to the container
-}
+// for (let i = 0; i < initialCards.length; i++) {
+//   const cardElement = getCardElement(initialCards[i]); // Create a card element
+//   cardsContainer.append(cardElement); // Add the card to the container
+// }
