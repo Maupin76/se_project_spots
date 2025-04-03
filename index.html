@@ -40,25 +40,26 @@
       <section class="cards page__section">
 
         <ul class="cards__list">
-
           <!-- This is a template for the cards -->
           <template id="card-template">
             <li class="card">
               <img src="" alt="" class="card__img">
               <div class="card__content">
+                <button type="button" class="card__delete-button"></button>
                 <h2 class="card__title"></h2>
                 <button type="button" class="card__like-button"></button>
               </div>
             </li>
           </template>
-
         </ul>
       </section>
 
     </main>
+
     <footer class="footer">
       <p class="footer__copyright">2025 &copy; Douglas A. Maupin</p>
     </footer>
+
     <!-- Modal for profile editing -->
     <div class="modal" id="edit-profile-modal">
       <div class="modal__container">
@@ -94,6 +95,14 @@
           </label>
           <button type="submit" class="modal__submit-button">Save</button>
         </form>
+      </div>
+    </div>
+
+    <div class="modal" id="preview-modal">
+      <div class="modal__container modal__container_type_preview">
+        <button aria-label="Close modal" class="modal__close modal__close_type_preview" type="button"></button>
+        <img src="" alt="" class="modal__image" />
+        <p class="modal__caption"></p>
       </div>
     </div>
 
