@@ -111,19 +111,3 @@ function createCardElement(data) {
 }
 
 initialCards.forEach(card => cardsContainer.appendChild(createCardElement(card)));
-
-/* === End of JavaScript === */
-
-
-/* === Suggested CSS Fix (modal.css or similar) === */
-/* Replace: */
-/* color: 33, 33, 33, 1; */
-/* With: */
-/* color: rgb(33, 33, 33); */
-
-/* === Remove duplicated cursor: pointer and clean hover === */
-/* In .card__like-button:hover, remove cursor: pointer; since it's in base */
-
-/* === Optional image renaming (just suggestion) === */
-/* From: State=State4.svg, State=Liked.svg, State=Default.svg */
-/* To: like-hover.svg, like-active.svg, delete-default.svg, delete-hover.svg */
