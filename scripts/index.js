@@ -1,5 +1,3 @@
-// === Refactored JavaScript: index.js ===
-
 const initialCards = [
   {
     name: "Val Thorens",
@@ -39,13 +37,11 @@ const editProfileModal = document.querySelector("#edit-profile-modal");
 const addCardModal = document.querySelector("#add-card-modal");
 const previewModal = document.querySelector("#preview-modal");
 
-const closeEditProfileModal = editProfileModal.querySelector(
-  ".modal__close-button"
-);
+const closeEditProfileModal = editProfileModal.querySelector(".modal__close-button");
 const closeCardButton = addCardModal.querySelector(".modal__close-button");
-const closePreviewButton = previewModal.querySelector(
-  ".modal__close_type_preview"
-);
+const closePreviewButton = previewModal.querySelector(".modal__close_type_preview");
+
+const cardSubmitButton = addCardModal.querySelector(".modal__submit-button");
 
 const previewImage = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
@@ -73,20 +69,45 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
-[
-  [closeEditProfileModal, editProfileModal],
-  [closeCardButton, addCardModal],
-  [closePreviewButton, previewModal],
-].forEach(([button, modal]) =>
-  button.addEventListener("click", () => closeModal(modal))
-);
+// Close the edit profile modal when its close button is clicked
+closeEditProfileModal.addEventListener("click", () => {
+  closeModal(editProfileModal);
+});
+
+// Close the add card modal when its close button is clicked
+closeCardButton.addEventListener("click", () => {
+  closeModal(addCardModal);
+});
+
+// Close the preview modal when its close button is clicked
+closePreviewButton.addEventListener("click", () => {
+  closeModal(previewModal);
+});
+
+
+// Close modal if user clicks on the overlay (outside the modal content)
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("mousedown", (event) => {
+    // Only close if the user clicked directly on the overlay
+    if (event.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
 
 //------------------- Event Listeners -------------------
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
+  resetFormState(editProfileForm, settings); // Reset error state and disable button
   openModal(editProfileModal);
 });
+
+newPostButton.addEventListener("click", () => {
+  resetFormState(addCardForm); // Reset error state and disable button
+  openModal(addCardModal);
+});
+
 
 newPostButton.addEventListener("click", () => openModal(addCardModal));
 
@@ -95,6 +116,9 @@ editProfileForm.addEventListener("submit", (event) => {
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
   closeModal(editProfileModal);
+
+  const button = editProfileForm.querySelector(".modal__submit-button");
+  disableButton(button, settings); // Disable again after submission
 });
 
 addCardForm.addEventListener("submit", (event) => {
@@ -106,6 +130,9 @@ addCardForm.addEventListener("submit", (event) => {
   cardsContainer.prepend(createCardElement(newCardData));
   closeModal(addCardModal);
   addCardForm.reset();
+
+  const button = addCardForm.querySelector(".modal__submit-button");
+  disableButton(button); // Disable again after submission
 });
 
 //------------------- Card Generation -------------------
