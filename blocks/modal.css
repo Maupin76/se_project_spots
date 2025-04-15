@@ -172,12 +172,11 @@
 }
 
 .modal__error{
-  color: red;
+  color: #FF0000B2;
   font-family: Poppins, Arial, Helvetica, sans-serif;
-  /* font-weight: 500; */
-  /* font-size: 16px; */
-  /* line-height: 110%; */
-  margin-top: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 110%;
 }
 
 
