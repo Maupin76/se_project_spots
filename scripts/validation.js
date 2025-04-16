@@ -2,7 +2,7 @@ const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-button",
-  inactiveButtonClass: "modal__disable_submit-button",
+  inactiveButtonClass: "modal__submit-button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error"
 };
@@ -10,7 +10,7 @@ const settings = {
 // Disable a submit button and apply styling
 const disableButton = (buttonElement, config) => {
   buttonElement.disabled = true;
-  buttonElement.classList.add(settings.inactiveButtonClass);
+  buttonElement.classList.add(config.inactiveButtonClass);
 };
 
 // Show error message for a specific input
@@ -40,14 +40,14 @@ const checkInputValidity = (formElement, inputElement, settings) => {
 
 // Reset all input errors and disable button
 const resetFormState = (formElement, config) => {
-  const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector));
-  const buttonElement = formElement.querySelector(settings.submitButtonSelector);
+  const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+  const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
   inputList.forEach((inputElement) => {
-    hideInputError(formElement, inputElement, settings);
+    hideInputError(formElement, inputElement, config);
   });
 
-  disableButton(buttonElement, settings);
+  disableButton(buttonElement, config);
 };
 
 const setEventListeners = (formElement, settings) => {
@@ -69,6 +69,11 @@ const setEventListeners = (formElement, settings) => {
 
   // Initial state
   toggleButtonState(inputList, buttonElement, settings);
+
+
+  formElement.addEventListener("reset", () => {
+    disableButton(buttonElement, settings);
+  });
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {

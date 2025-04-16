@@ -132,7 +132,7 @@
   opacity: 0.8;
 }
 
-.modal__disable_submit-button{
+.modal__submit-button_disabled{
   opacity: 0.5;
 }
 

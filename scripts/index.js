@@ -95,6 +95,16 @@ document.querySelectorAll(".modal").forEach((modal) => {
   });
 });
 
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    const openModal = document.querySelector(".modal.modal_opened");
+    if (openModal) {
+      document.activeElement.blur(); // Remove focus from button/input
+      closeModal(openModal);
+    }
+  }
+});
+
 //------------------- Event Listeners -------------------
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileName.textContent;
@@ -104,7 +114,6 @@ profileEditButton.addEventListener("click", () => {
 });
 
 newPostButton.addEventListener("click", () => {
-  resetFormState(addCardForm); // Reset error state and disable button
   openModal(addCardModal);
 });
 
@@ -131,8 +140,7 @@ addCardForm.addEventListener("submit", (event) => {
   closeModal(addCardModal);
   addCardForm.reset();
 
-  const button = addCardForm.querySelector(".modal__submit-button");
-  disableButton(button); // Disable again after submission
+  disableButton(cardSubmitButton, settings); // Disable again after submission
 });
 
 //------------------- Card Generation -------------------
