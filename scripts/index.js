@@ -61,13 +61,27 @@ const cardTemplate = document.querySelector("#card-template").content;
 const cardsContainer = document.querySelector(".cards__list");
 
 //------------------- Modal Utilities -------------------
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".modal_opened");
+    if (openedPopup) {
+      document.activeElement.blur();
+      closeModal(openedPopup);
+    }
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscape); // Add escape listener
 }
+
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscape); // Remove escape listener
 }
+
 
 // Close the edit profile modal when its close button is clicked
 closeEditProfileModal.addEventListener("click", () => {
@@ -93,16 +107,6 @@ document.querySelectorAll(".modal").forEach((modal) => {
       closeModal(modal);
     }
   });
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    const openModal = document.querySelector(".modal.modal_opened");
-    if (openModal) {
-      document.activeElement.blur(); // Remove focus from button/input
-      closeModal(openModal);
-    }
-  }
 });
 
 //------------------- Event Listeners -------------------
