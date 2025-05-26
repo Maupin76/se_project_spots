@@ -1,3 +1,22 @@
+import "./index.css"; // Import the CSS file for styles
+import {
+  enableValidation,
+  settings,
+  resetFormState,
+  disableButton,
+} from "../scripts/validation.js"; // Import validation functions
+
+import logo from "../images/logo.svg";
+import avatar from "../images/avatar.jpg";
+import pencil from "../images/pencil.svg";
+import plus from "../images/plus-icon.svg";
+
+// Assign image sources
+document.querySelector(".header__logo").src = logo;
+document.querySelector(".profile__avatar").src = avatar;
+document.querySelector(".profile__edit-button-icon").src = pencil;
+document.querySelector(".profile__new-post-plus-icon").src = plus;
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -37,9 +56,13 @@ const editProfileModal = document.querySelector("#edit-profile-modal");
 const addCardModal = document.querySelector("#add-card-modal");
 const previewModal = document.querySelector("#preview-modal");
 
-const closeEditProfileModal = editProfileModal.querySelector(".modal__close-button");
+const closeEditProfileModal = editProfileModal.querySelector(
+  ".modal__close-button"
+);
 const closeCardButton = addCardModal.querySelector(".modal__close-button");
-const closePreviewButton = previewModal.querySelector(".modal__close_type_preview");
+const closePreviewButton = previewModal.querySelector(
+  ".modal__close_type_preview"
+);
 
 const cardSubmitButton = addCardModal.querySelector(".modal__submit-button");
 
@@ -76,12 +99,10 @@ function openModal(modal) {
   document.addEventListener("keydown", handleEscape); // Add escape listener
 }
 
-
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscape); // Remove escape listener
 }
-
 
 // Close the edit profile modal when its close button is clicked
 closeEditProfileModal.addEventListener("click", () => {
@@ -97,7 +118,6 @@ closeCardButton.addEventListener("click", () => {
 closePreviewButton.addEventListener("click", () => {
   closeModal(previewModal);
 });
-
 
 // Close modal if user clicks on the overlay (outside the modal content)
 document.querySelectorAll(".modal").forEach((modal) => {
@@ -120,7 +140,6 @@ profileEditButton.addEventListener("click", () => {
 newPostButton.addEventListener("click", () => {
   openModal(addCardModal);
 });
-
 
 newPostButton.addEventListener("click", () => openModal(addCardModal));
 
@@ -179,6 +198,6 @@ function createCardElement(data) {
   return card;
 }
 
-initialCards.forEach((card) =>
-  cardsContainer.append(createCardElement(card))
-);
+initialCards.forEach((card) => cardsContainer.append(createCardElement(card)));
+
+enableValidation(settings); // Enable validation for all forms
